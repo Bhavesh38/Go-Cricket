@@ -2,7 +2,7 @@ import React from 'react'
 
 const ServicesHover = () => {
   return (
-      <div className="w-72 absolute top-8 bg-[#fff] border-[2px] shadow-2xl shadow-[#757575] duration-1000 transition-all">
+      <div className="z-10 w-72 absolute top-8 bg-[#fff] border-[2px] shadow-2xl shadow-[#757575] duration-1000 transition-all">
         <div className='flex border-y-[2px] p-2 hover:bg-[#e7e7e7] items-center'>
           <img className='w-20 rounded mr-2  shadow-lg shadow-[#797979]' src="https://tse4.mm.bing.net/th?id=OIP.PGRMBBL_bdz1Fou6sF4FFgHaFj&pid=Api&P=0" al="cricket.png"/>
           <div>
