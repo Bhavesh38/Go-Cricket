@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CricketScores from '../cricketScore/CricketScores'
 import Football from '../Football/Football'
+import Navbar from '../Navbar/Navbar'
 
 const Home = () => {
     const [scoreCardTypeActiveness,setScoreCardTypeActiveness]=useState({
@@ -9,7 +10,8 @@ const Home = () => {
     })
   return (
     <>
-      <div className='border-b-[2px] p-2'>
+      <Navbar/>
+      {/* <div className='border-b-[2px] p-2'>
         <span className={`rounded-xl py-[2px] px-[20px]  font-bold mr-2 border-[#568fe4]  border-[1px] ${scoreCardTypeActiveness.cricket ?  "bg-[#3974ce] text-[#fff]" : "text-[#568fe4] bg-[#fff]"} cursor-pointer`} onClick={() => {setScoreCardTypeActiveness({
             cricket:true,
             football:false
@@ -18,9 +20,10 @@ const Home = () => {
             cricket:false,
             football:true
         })}}>Football</span>
+      </div> */}
+      <div>
+        Atricles
       </div>
-      {scoreCardTypeActiveness.cricket && <CricketScores/>}
-      {scoreCardTypeActiveness.football && <Football/>}
     </>
   )
 }
