@@ -13,8 +13,7 @@ const CricketScoreCard = ({match}) => {
                 {/* <span>3rd T20</span>
                 <span>WI Tour of RSA</span> */}
                 <span></span>
-                <strong className={`${match?.matchType==="odi" && "bg-[#5065ef]"} ${match?.matchType==="t20" && "bg-[#ed36cb]"} ${match?.matchType==="test" && "bg-[#272727]"} text-[#fff] rounded-2xl px-2 text-[12px] float-right`}>{match?.matchType
-.toUpperCase()}</strong>
+                <strong className={`${match?.matchType==="odi" && "bg-[#5065ef]"} ${match?.matchType==="t20" && "bg-[#ed36cb]"} ${match?.matchType==="test" && "bg-[#272727]"} text-[#fff] rounded-2xl px-2 text-[12px] float-right`}>{match?.matchType?.toUpperCase()}</strong>
             </div>
             <div className='my-auto'>
                 <div className='flex justify-between items-center'>
