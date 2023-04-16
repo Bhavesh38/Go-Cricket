@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { setMatchId } from '../../redux/matchSlice';
 // e49e70f2-437b-4395-b267-bf81546b740d
 const CricketScoreCard = ({match}) => {
     // console.log(match);
     const dispatch = useDispatch();
+    const navigate=useNavigate();
+    const handleClick = () => {
+        // () => dispatch(setMatchId(match?.id))
+        navigate(`/cricket/scorecard/${match.id}`,{replace:true});
+    }
   return (
     <div className='relative flex-shrink-0 h-[150px] sm:w-1/3 md:w-1/4 bg-[#fdfdfd] m-2 my-4 rounded-sm shadow-xl shadow-[#686868]'>
-        <Link to="/cricket/scorecard" className='p-2' onClick={() => dispatch(setMatchId(match?.id))}>
+        <Link to="/cricket/scorecard" className='p-2' onClick={handleClick}>
             <div className='flex justify-between items-center my-auto'>
                 {/* <span>3rd T20</span>
                 <span>WI Tour of RSA</span> */}

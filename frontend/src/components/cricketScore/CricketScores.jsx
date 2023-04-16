@@ -10,9 +10,9 @@ const CricketScores = () => {
 
   const {currentMatches,IPLMatches} = useSelector((state) => state.matchSlice);
   // console.log(currentMatches);
-  console.log(IPLMatches);
+  // console.log(IPLMatches);
   useEffect( ()=>{
-    // dispatch(getCurrentMatches());
+    dispatch(getCurrentMatches());
     
   },[])
   return (
