@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from "./components/Navbar/Navbar";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Home from './components/home/Home';
 import Error404 from './components/error/Error404';
@@ -9,6 +8,7 @@ import CricketScores from './components/cricketScore/CricketScores';
 import Squad from './components/cricketScore/Squad';
 import BallPerBallCommentry from './components/cricketScore/scorecard/BallPerBallCommentry';
 import PointsTable from './components/cricketScore/PointsTable';
+import Auction from './components/auction/Auction';
 
 export default function App() {
 
@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/cricket/squad" element={<Squad/>}/>
         <Route path="/cricket/ball-by-ball" element={<BallPerBallCommentry/>}/>
         <Route path="/cricket/points-table" element={<PointsTable/>}/>
+        <Route path="/auction" element={<Auction/>}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>
     </BrowserRouter>

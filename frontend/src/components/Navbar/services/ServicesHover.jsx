@@ -27,13 +27,13 @@ const ServicesHover = () => {
           
           </div>
         </div>
-        <div className='flex items-start border-y-[2px] p-2 hover:bg-[#e7e7e7]'>
+        <Link to="/auction" className='flex items-start border-y-[2px] p-2 hover:bg-[#e7e7e7]'>
           <img className='w-20 rounded  mr-2 shadow-lg shadow-[#797979]' src="https://tse2.mm.bing.net/th?id=OIP.ava7MZX4spO9EEtNWhYv3AHaE8&pid=Api&P=0" al="cricket.png"/>
           <div>
             <h3>Auction</h3>
             <p className='text-[#5e5e5e] text-[0.7rem]'>Setup virtual Auction.</p>
           </div>
-        </div>
+        </Link>
         <div className='flex items-start border-y-[2px] p-2 hover:bg-[#e7e7e7]'>
           <img className='w-20 rounded  mr-2 shadow-lg shadow-[#797979]' src="https://thumbs.dreamstime.com/z/cricket-match-schedule-participant-countries-second-round-golden-winning-trophy-names-stadium-background-66869270.jpg" al="cricket.png"/>
           <div>
