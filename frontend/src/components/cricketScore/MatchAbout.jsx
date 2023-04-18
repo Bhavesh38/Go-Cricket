@@ -10,11 +10,11 @@ const MatchAbout = () => {
         <div className='flex justify-between '>
           <span><strong >Series:</strong>IPL, 2023</span>
           <span><strong>Venue:</strong>{fullMatchScoreCard?.venue}</span>
-          <span><strong>Date & Time:</strong>{fullMatchScoreCard?.date} - {fullMatchScoreCard?.dateTimeGMT}</span>
+          <span><strong>Date & Time:</strong>{fullMatchScoreCard?.dateTimeGMT}</span>
         </div>
       </div>
-      <p>{fullMatchScoreCard?.tossWinner} won the toss and elected to {fullMatchScoreCard?.tossChoice} first.</p>
-      <p>{fullMatchScoreCard?.status}.</p>
+      <p><strong>{fullMatchScoreCard?.tossWinner}</strong> won the toss and elected to <strong>{fullMatchScoreCard?.tossChoice}</strong> first.</p>
+      <p className='font-semibold text-[#f17f7f]'>{fullMatchScoreCard?.status}.</p>
     </div>
   )
 }

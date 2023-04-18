@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BowlingDetails = () => {
+const BowlingDetails = ({bowling}) => {
   return (
     <div className='w-full '>
       <table className='w-full text-left px-4'>
@@ -14,16 +14,20 @@ const BowlingDetails = () => {
             <th>Nb</th>
             <th>Econ</th>
         </tr>
-        <tr className='hover:bg-[#dcdbdb] px-4 border-b-[1px]'>
-            <td >Arshdeep Singh</td>
-            <td>4</td>
-            <td>0</td>
-            <td>32</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>8.00</td>
-        </tr>
+        {
+            bowling?.map((bowler,bowlerIndex) => (
+                <tr className='hover:bg-[#dcdbdb] px-4 border-b-[1px]' key={bowlerIndex}>
+                    <td >{bowler?.bowler?.name}</td>
+                    <td>{bowler?.o}</td>
+                    <td>{bowler?.m}</td>
+                    <td>{bowler?.r}</td>
+                    <td>{bowler?.w}</td>
+                    <td>{bowler?.wd}</td>
+                    <td>{bowler?.nb}</td>
+                    <td>{bowler?.eco}</td>
+                </tr>
+            ))
+        }
       </table>
     </div>
   )

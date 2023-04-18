@@ -1,17 +1,17 @@
 import React from 'react'
 
-const BatterCard = () => {
+const BatterCard = ({batterDetails}) => {
   return (
     <tr className='px-4 border-b-[1px] hover:bg-[#d8d8d8]'>
-        <td>K.L. Rahul</td>
-        <td>c (sub)Nathan Ellis b Arshdeep Singh</td>
-        <td>74</td>
-        <td>56</td>
-        <td>8</td>
-        <td>1</td>
-        <td>130.00</td>
+        <td>{batterDetails?.batsman?.name}</td>
+        <td>{batterDetails?.dismissal || "0"}</td>
+        <td>{batterDetails?.r}</td>
+        <td>{batterDetails?.b}</td>
+        <td>{batterDetails?.("4s")}</td>
+        <td>{batterDetails?.("6s")}</td>
+        <td>{batterDetails?.sr}</td>
     </tr>
   )
 }
 
-export default BatterCard
+export default BatterCard;

@@ -13,7 +13,7 @@ const CricketScoreCard = ({match}) => {
     }
   return (
     <div className='relative flex-shrink-0 h-[150px] sm:w-1/3 md:w-1/4 bg-[#fdfdfd] m-2 my-4 rounded-sm shadow-xl shadow-[#686868]'>
-        <Link to="/cricket/scorecard" className='p-2' onClick={handleClick}>
+        <div className='p-2' onClick={handleClick}>
             <div className='flex justify-between items-center my-auto'>
                 {/* <span>3rd T20</span>
                 <span>WI Tour of RSA</span> */}
@@ -26,19 +26,19 @@ const CricketScoreCard = ({match}) => {
                         <img src={match?.teamInfo[0]?.img} alt="" className='w-5 h-5' />
                         <span>{match?.teamInfo[0].name}</span>
                     </div>
-                    <strong>{match.score[0].inning.includes(match?.teamInfo[0]?.name) && `${match.score[0].r}-${match?.score[0]?.w}(${match?.score[0]?.o})`} {match?.score[1]?.inning.includes(match?.teamInfo[0]?.name) && `${match?.score[1]?.r}-${match?.score[1]?.w}(${match?.score[1]?.o})`}</strong>
+                    <strong>{match.score[0]?.inning?.includes(match?.teamInfo[0]?.name) && `${match.score[0].r}-${match?.score[0]?.w}(${match?.score[0]?.o})`} {match?.score[1]?.inning.includes(match?.teamInfo[0]?.name) && `${match?.score[1]?.r}-${match?.score[1]?.w}(${match?.score[1]?.o})`}</strong>
                  
                 </div>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center'>
                         <img src={match?.teamInfo[1]?.img} alt="" className='w-5 h-5' />
-                        <span>{match?.teamInfo[1].name}</span>
+                        <span>{match?.teamInfo[1]?.name}</span>
                     </div>
-                    <strong>{match.score[0].inning.includes(match?.teamInfo[1]?.name) && `${match.score[0].r}-${match?.score[0]?.w}(${match?.score[0]?.o})`} {match?.score[1]?.inning.includes(match?.teamInfo[1]?.name) && `${match?.score[1]?.r}-${match?.score[1]?.w}(${match?.score[1]?.o})`}</strong>
+                    <strong>{match?.score[0]?.inning?.includes(match?.teamInfo[1]?.name) && `${match.score[0].r}-${match?.score[0]?.w}(${match?.score[0]?.o})`} {match?.score[1]?.inning.includes(match?.teamInfo[1]?.name) && `${match?.score[1]?.r}-${match?.score[1]?.w}(${match?.score[1]?.o})`}</strong>
                 </div>
             </div>
             <span className='my-auto text-[#ea9595]'>{match?.status}.</span>
-        </Link>
+        </div>
         <div className='absolute flex justify-between bg-[#327ab6] px-2 w-full text-end float-right bottom-0'>
             <span></span>
             <span className='float-right text-end text-[#ffffff] cursor-pointer hover:text-[#d8d8d8]'>More Matches</span>

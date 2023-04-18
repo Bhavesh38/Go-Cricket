@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ExtrasCard = () => {
+const ExtrasCard = ({extras}) => {
   return (
     <div className='px-4 border-b-[1px]'>
       <strong className='mr-4'>Extras:</strong>
-      <span>12 (b 0, lb 5, w 6, nb 1, p 0)</span>
+      <span>{extras?.r} (b {extras?.b}, lb {extras?.lb}, w {extras?.w}, nb {extras?.nb}, p {extras?.p}, )</span>
     </div>
   )
 }
