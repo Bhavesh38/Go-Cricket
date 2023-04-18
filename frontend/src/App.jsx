@@ -9,6 +9,7 @@ import Squad from './components/cricketScore/Squad';
 import BallPerBallCommentry from './components/cricketScore/scorecard/BallPerBallCommentry';
 import PointsTable from './components/cricketScore/PointsTable';
 import Auction from './components/auction/Auction';
+import CreateAuction from './components/auction/createAuction/CreateAuction';
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/cricket/ball-by-ball" element={<BallPerBallCommentry/>}/>
         <Route path="/cricket/points-table" element={<PointsTable/>}/>
         <Route path="/auction" element={<Auction/>}/>
+        <Route path="/auction/create-auction" element={<CreateAuction/>}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>
     </BrowserRouter>
