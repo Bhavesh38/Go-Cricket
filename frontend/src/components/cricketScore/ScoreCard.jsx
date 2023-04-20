@@ -10,13 +10,14 @@ import { useParams } from 'react-router-dom';
 const ScoreCard = () => {
     const dispatch=useDispatch();
     const {matchId,fullMatchScoreCard}=useSelector((state)=>state.matchSlice);
+
     const {id} = useParams();
     console.log(id);
     useEffect(() => {
         dispatch(getScoreCard(id));
     },[id]);
 
-    console.log(fullMatchScoreCard);
+    // console.log(fullMatchScoreCard);
   return (
     <>
     <Navbar/>

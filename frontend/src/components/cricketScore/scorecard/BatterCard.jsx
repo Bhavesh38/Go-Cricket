@@ -7,8 +7,8 @@ const BatterCard = ({batterDetails}) => {
         <td>{batterDetails?.dismissal || "0"}</td>
         <td>{batterDetails?.r}</td>
         <td>{batterDetails?.b}</td>
-        <td>{batterDetails?.("4s")}</td>
-        <td>{batterDetails?.("6s")}</td>
+        {/* <td>{batterDetails?."4s"}</td>
+        <td>{batterDetails?."6s"}</td> */}
         <td>{batterDetails?.sr}</td>
     </tr>
   )

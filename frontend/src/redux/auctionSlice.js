@@ -10,10 +10,10 @@ export const auctionSlice= createSlice({
     },
     reducers: {
         setBatters: (state, action) => {
-            state.batters = [state.batters,action.payload];
+            state.batters = [...state.batters,action.payload];
         },
         setBowlers: (state, action) => {
-            state.bowlers = [state.bowlers,action.payload];
+            state.bowlers = [...state.bowlers,action.payload];
         },
         setAllrounders: (state, action) => {
             state.allrounders = [...state.allrounders,action.payload];

@@ -28,7 +28,12 @@ const AddPlayerInAuction = () => {
         }else if(playerData.playerRole==='wicket-keeper'){
             dispatch(setWicketkeepers(playerData));
         }
-
+        setPlayerData({
+            playerName:'',
+            playerRole:'batter',
+            playerBasePrize:'20',
+            playerCountry:"AFG"
+        })
     }
   return (
     <div className='flex-[0.6] max-h-[90vh] overflow-y-scroll p-20'>
