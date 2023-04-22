@@ -17,6 +17,7 @@ const AddPlayerInAuction = () => {
         setPlayerData({...playerData,[e.target.name]:e.target.value});
     }
 
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if(playerData.playerRole==='batter'){

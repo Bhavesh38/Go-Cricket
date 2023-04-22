@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BatterCard from './BatterCard'
 import ExtrasCard from './ExtrasCard'
 import BowlingDetails from './BowlingDetails'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { setMatchId } from '../../../redux/matchSlice'
 
 const FullScore = () => {
+    const dispatch=useDispatch();
     const {matchId,fullMatchScoreCard}=useSelector((state)=>state.matchSlice);
+    const {id}=useParams();
+    useEffect(()=>{
+        dispatch(setMatchId(id));
+    },[id])
   return (
     <>
     {

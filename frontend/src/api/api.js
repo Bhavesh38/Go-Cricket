@@ -13,3 +13,4 @@ export const getCurrentMatchesData = () => API.get(`/currentMatches?apikey=${API
 export const getSeriesInfoData= (seriesId) => API.get(`/series_info?apikey=${APIKEY}&id=${seriesId}`);
 export const getScoreCardData=(matchId) => API.get(`/match_scorecard?apikey=${APIKEY}&id=${matchId}`);
 // https://api.cricapi.com/v1/match_scorecard?apikey=e49e70f2-437b-4395-b267-bf81546b740d&id=28004108-5cdd-43f7-82f3-f530bf8b2ce9
+export const getSquadData=(matchId) => API.get(`/match_squad?apikey=${APIKEY}&id=${matchId}`);

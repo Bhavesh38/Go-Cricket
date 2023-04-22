@@ -7,7 +7,8 @@ export const matchSlice=createSlice({
         IPLMatches:[],
         CricketseriesInformation:"",
         matchId:"",
-        fullMatchScoreCard:""
+        fullMatchScoreCard:"",
+        squad:[]
     },
     reducers:{
         setCurrentMatches:(state,action)=>{
@@ -25,9 +26,12 @@ export const matchSlice=createSlice({
         },
         setFullMatchScoreCard:(state,action)=>{
             state.fullMatchScoreCard=action.payload?.data;
+        },
+        setSquad:(state,action) => {
+            state.squad=action.payload;
         }
     }
 })
 
-export const {setCurrentMatches,setSeriesInformation,setMatchId,setIPLMatches,setFullMatchScoreCard}=matchSlice.actions;
+export const {setCurrentMatches,setSeriesInformation,setMatchId,setIPLMatches,setFullMatchScoreCard,setSquad}=matchSlice.actions;
 export default matchSlice.reducer;

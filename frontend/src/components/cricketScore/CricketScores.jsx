@@ -12,7 +12,7 @@ const CricketScores = () => {
   // console.log(currentMatches);
   // console.log(IPLMatches);
   useEffect( ()=>{
-    dispatch(getCurrentMatches());
+    // dispatch(getCurrentMatches());
     
   },[])
   return (

@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import CricketOptions from './CricketOptions'
 import MatchAbout from './MatchAbout'
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getSquad } from '../../actions/matchActions'
 
 const Squad = () => {
+  const dispatch=useDispatch();
+  const {id}=useParams();
+  const {squad}=useSelector(state=>state.matchSlice);
+  console.log(squad);
+  useEffect(()=>{
+    dispatch(getSquad(id));
+  },[id]);
+
+
   return (
     <>
       <Navbar/>

@@ -1,5 +1,5 @@
 import * as api from "../api/api.js";
-import { setCurrentMatches, setFullMatchScoreCard, setIPLMatches } from "../redux/matchSlice.js";
+import { setCurrentMatches, setFullMatchScoreCard, setIPLMatches,setSquad } from "../redux/matchSlice.js";
 
 export const getCurrentMatches =  ()  => async (dispatch) => {
     try {
@@ -25,6 +25,16 @@ export const getScoreCard = (matchId) => async (dispatch) => {
         const {data} =await api.getScoreCardData(matchId);
         // console.log(data);
         dispatch(setFullMatchScoreCard(data));
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getSquad=(matchId) => async (dispatch) => {
+    try {
+        const {data} =await api.getSquadData(matchId);
+        console.log(data);
+        dispatch(setSquad(data));
     } catch (error) {
         console.log(error);
     }

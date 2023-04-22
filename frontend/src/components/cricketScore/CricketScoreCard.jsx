@@ -9,7 +9,9 @@ const CricketScoreCard = ({match}) => {
     const navigate=useNavigate();
     const handleClick = () => {
         // () => dispatch(setMatchId(match?.id))
+        dispatch(setMatchId(match?.id));
         navigate(`/cricket/scorecard/${match.id}`);
+        
     }
   return (
     <div className='relative flex-shrink-0 h-[150px] sm:w-1/3 md:w-1/4 bg-[#fdfdfd] m-2 my-4 rounded-sm shadow-xl shadow-[#686868]'>
