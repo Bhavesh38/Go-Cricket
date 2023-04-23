@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BatterCard = ({batterDetails}) => {
-  console.log(batterDetails)
   return (
     <tr className='px-4 border-b-[1px] hover:bg-[#d8d8d8]'>
         <td>{batterDetails?.batsman?.name}</td>

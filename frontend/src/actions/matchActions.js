@@ -33,7 +33,7 @@ export const getScoreCard = (matchId) => async (dispatch) => {
 export const getSquad=(matchId) => async (dispatch) => {
     try {
         const {data} =await api.getSquadData(matchId);
-        console.log(data);
+        // console.log(data);
         dispatch(setSquad(data));
     } catch (error) {
         console.log(error);

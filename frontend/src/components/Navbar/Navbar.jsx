@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ServicesHover from "./services/ServicesHover";
 import MatchesHover from "./matches/MatchesHover";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
 
@@ -64,7 +65,7 @@ export default function Navbar() {
                 
                 <span className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">Contact</span>
                 <span className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">About</span>
-                <span className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">SignUp</span>
+                <Link to="/signin" className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">SignUp</Link>
 
             </div>
         </div>

@@ -5,7 +5,7 @@ const PlayerInAuction = () => {
 
   const {batters,bowlers,allrounders,wicketkeepers} = useSelector(state => state.auctionSlice);
 
-  const [typeOfPlayer,setTypeOfPlayer] = useState('batter');
+  const [typeOfPlayer,setTypeOfPlayer] = useState('');
   const [playersArray,setPlayersArray] = useState([]);
   useEffect(() => {
     if(typeOfPlayer==='batter'){
@@ -25,6 +25,7 @@ const PlayerInAuction = () => {
     <div className='flex-[0.4] border-r-[2px] max-h-[90vh] overflow-y-scroll'>
         <h1 className='font-bold text-center my-2'>Registered Players</h1>
         <select className='w-full outline-none border-[1px] my-1 py-1 px-2 focus-within:shadow-xl' name="typeOfPlayer" value={typeOfPlayer} onChange={handleChange}>
+          <option value="1" selected >Select Player Type</option>
           <option value="batter">Batter</option>
           <option value="bowler">Bowler</option>
           <option value="all-rounder">All-Rounder</option>

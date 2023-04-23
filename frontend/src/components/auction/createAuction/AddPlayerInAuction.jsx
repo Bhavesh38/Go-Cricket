@@ -7,10 +7,10 @@ const AddPlayerInAuction = () => {
 
     const dispatch = useDispatch();
     const [playerData,setPlayerData]=useState({
-        playerName:'',
-        playerRole:'batter',
-        playerBasePrize:'20',
-        playerCountry:"AFG"
+        playerName:"",
+        playerRole:"",
+        playerBasePrize:"",
+        playerCountry:""
     });
 
     const handleChange=(e)=>{
@@ -30,10 +30,10 @@ const AddPlayerInAuction = () => {
             dispatch(setWicketkeepers(playerData));
         }
         setPlayerData({
-            playerName:'',
-            playerRole:'batter',
-            playerBasePrize:'20',
-            playerCountry:"AFG"
+            playerName:"",
+            playerRole:"",
+            playerBasePrize:"",
+            playerCountry:""
         })
     }
   return (
@@ -48,6 +48,7 @@ const AddPlayerInAuction = () => {
             <div className='w-full my-2'>
                 <label htmlFor="playerRole" className='w-full font-semibold'>Player Role</label>
                 <select required id="playerRole" className='w-full outline-none border-[1px] my-1 py-1 px-2 focus-within:shadow-xl' name="playerRole" value={playerData.playerRole} onChange={handleChange}>
+                    <option value="1" selected>Select Your Type</option>
                     <option value="batter">Batter</option>
                     <option value="bowler">Bowler</option>
                     <option value="all-rounder">All-Rounder</option>
@@ -57,6 +58,7 @@ const AddPlayerInAuction = () => {
             <div className='w-full my-2'>
                 <label htmlFor="playerBasePrize" className='w-full font-semibold'>Player Base Price(in Lac)</label>
                 <select required id="playerBasePrize" className='w-full outline-none border-[1px] my-1 py-1 px-2 focus-within:shadow-xl' name="playerBasePrize" value={playerData.playerBasePrize} onChange={handleChange}>
+                    <option value="1" selected >Select Your Base Price</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
                     <option value="50">50</option>
@@ -67,6 +69,7 @@ const AddPlayerInAuction = () => {
             <div className='w-full my-2'>
                 <label for="playerCountry" className='w-full font-semibold'>Player Country</label>
                 <select required id="playerCountry" className='w-full outline-none border-[1px] my-1 py-1 px-2 focus-within:shadow-xl' name="playerCountry" value={playerData.playerCountry} onChange={handleChange}>
+                    <option value="1" selected >Select Your Country</option>
                     <option value="AFG">Afghanistan</option>
                     <option value="ALA">�land Islands</option>
                     <option value="ALB">Albania</option>
