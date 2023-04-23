@@ -12,6 +12,7 @@ import Auction from './components/auction/Auction';
 import CreateAuction from './components/auction/createAuction/CreateAuction';
 import Signin from './components/auth/Signin';
 import Signup from './components/auth/Signup';
+import ResetPassword from './components/auth/ResetPassword';
 
 export default function App() {
 
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/football" element={<Football/>}/>
         <Route path="/cricket" element={<CricketScores/>}/>
         <Route path="/cricket/scorecard/:id" element={<ScoreCard/>}/>

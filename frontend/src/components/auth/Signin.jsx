@@ -7,7 +7,7 @@ const Signin = () => {
   return (
     <div className='bg-[#e8e5e5] pb-8'>
       <Navbar/>
-      <div className='w-full sm:w-1/2 md:w-1/4 mx-auto bg-[#fff] p-1 sm:p-4 sm:shadow-lg sm:shadow-[#d7d4d4] sm:mt-[7%] border-[1px] border-[#cae8f2] text-center'>
+      <div className='w-full sm:w-1/2 mx-auto bg-[#fff] p-1 sm:p-4 sm:shadow-lg sm:shadow-[#d7d4d4] sm:mt-[7%] border-[1px] border-[#cae8f2] text-center'>
       <h2 className='font-bold  text-[1.5rem] border-b-[1px]'>Sign In.</h2>
         <h2 className='font-bold  text-[1.2rem] my-2'>Welcome, Guest!</h2>
         <p>Continue With Google or enter Details to Signin.</p>
@@ -32,7 +32,7 @@ const Signin = () => {
                     <input type="checkbox" name="remember" id="remember" className='mr-2'/>
                     <label htmlFor="remember" className='font-semibold'>Remember Me</label>
                 </div>
-                <span href="#" className='text-[#0d6efd]'>Forgot Password?</span>
+                <Link to="/reset-password" className='text-[#0d6efd] hover:text-[#1371ff] hover:underline'>Forgot Password?</Link>
             </div>
             <button type='submit' className='w-full bg-[#0d6efd] hover:bg-[#3a80e8] text-[#fff] py-1 rounded my-2'>Sign In</button>
             <p className='text-[#202020]'>Don't have an account? <Link to="/signup" className='font-semibold text-[#0d6efd] hover:underline'>Sign Up</Link></p>

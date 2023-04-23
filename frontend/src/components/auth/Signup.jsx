@@ -39,10 +39,10 @@ const Signup = () => {
                     <input type="checkbox" name="remember" id="remember" className='mr-2'/>
                     <label htmlFor="remember" className='font-semibold'>Remember Me</label>
                 </div>
-                <span href="#" className='text-[#0d6efd]'>Forgot Password?</span>
+                {/* <span href="#" className='text-[#0d6efd]'>Forgot Password?</span> */}
             </div>
-            <button type='submit' className='w-full bg-[#0d6efd] hover:bg-[#3a80e8] text-[#fff] py-1 rounded my-2'>Sign In</button>
-            <p className='text-[#202020]'>Already have an account? <Link to="/signin" className='font-semibold text-[#0d6efd]'>Sign In</Link></p>
+            <button type='submit' className='w-full bg-[#0d6efd] hover:bg-[#3a80e8] text-[#fff] py-1 rounded my-2'>Sign Up</button>
+            <p className='text-[#202020]'>Already have an account? <Link to="/signin" className='font-semibold text-[#0d6efd] hover:underline'>Sign In</Link></p>
         </form>
       </div>
     </div>

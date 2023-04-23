@@ -17,7 +17,7 @@ app.get('/',(req,res) => {
     res.send('Hello');
 });
 
-app.use('/user',userRouter)
+app.use('/user',userRouter);
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
