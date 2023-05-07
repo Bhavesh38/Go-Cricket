@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import userRouter from './routes/userRoutes.js';
+import auctionRouter from './routes/auctionRoutes.js';
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.get('/',(req,res) => {
 });
 
 app.use('/user',userRouter);
+app.use('/auction',auctionRouter);
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
