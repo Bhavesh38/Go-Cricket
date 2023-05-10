@@ -27,8 +27,8 @@ export default function App() {
         <Route path="/cricket" element={<CricketScores/>}/>
         <Route path="/cricket/scorecard/:id" element={<ScoreCard/>}/>
         <Route path="/cricket/squad/:id" element={<Squad/>}/>
-        <Route path="/cricket/ball-by-ball" element={<BallPerBallCommentry/>}/>
-        <Route path="/cricket/points-table" element={<PointsTable/>}/>
+        <Route path="/cricket/ball-by-ball/:id" element={<BallPerBallCommentry/>}/>
+        <Route path="/cricket/points-table/:id" element={<PointsTable/>}/>
         <Route path="/auction" element={<Auction/>}/>
         <Route path="/auction/create-auction" element={<CreateAuction/>}/>
         <Route path="*" element={<Error404/>}/>

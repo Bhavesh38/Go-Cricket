@@ -4,9 +4,9 @@ import auth from "../middlewares/auth.js";
 
 const auctionRouter=express.Router();
 
-auctionRouter.post("/create-auction",createNewAuction);
-auctionRouter.get("/allAuctions",getAllAuction);
-auctionRouter.post("/:id/addPlayer",addPlayerInAuction);
-auctionRouter.post("/:id/removePlayer",removePlayerFromAuction);
+auctionRouter.post("/create-auction",auth,createNewAuction);
+auctionRouter.get("/allAuctions",auth,getAllAuction);
+auctionRouter.post("/:id/addPlayer",auth,addPlayerInAuction);
+auctionRouter.post("/:id/removePlayer",auth,removePlayerFromAuction);
 
 export default auctionRouter;

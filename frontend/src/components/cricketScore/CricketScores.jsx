@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getCurrentMatches } from '../../actions/matchActions';
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
+import Article from '../home/articles/Article';
 
 const CricketScores = () => {
   const dispatch=useDispatch();
@@ -12,9 +13,10 @@ const CricketScores = () => {
   // console.log(currentMatches);
   // console.log(IPLMatches);
   useEffect( ()=>{
-    // dispatch(getCurrentMatches());
+    dispatch(getCurrentMatches());
     
   },[])
+  const {articles}=useSelector(state=>state.articleSlice);
   return (
     <>
     <Navbar/>
@@ -30,6 +32,11 @@ const CricketScores = () => {
         ))
       }
     </div>
+    {
+          articles?.map((article,index)=>(
+            <Article key={index} article={article}/>
+          ))
+        }
     </>
   )
 }

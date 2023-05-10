@@ -40,7 +40,7 @@ const FullScore = () => {
                 </table>
                 <div className='pl-4 border-b-[1px]'>
                     <span>Did not bat:</span>
-                    <span className='mx-2'>Awesh Khan, Mark Wood</span>
+                    {/* <span className='mx-2'>Awesh Khan, Mark Wood</span> */}
                 </div>
                 <ExtrasCard extras={item?.extras}/>
                 <div>

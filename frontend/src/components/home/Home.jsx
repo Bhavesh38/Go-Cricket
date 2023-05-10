@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CricketScores from '../cricketScore/CricketScores'
 import Football from '../Football/Football'
 import Navbar from '../Navbar/Navbar'
+import { useDispatch, useSelector } from 'react-redux'
+import { getArticles } from '../../actions/articlesActions'
+import Article from './articles/Article'
 
 const Home = () => {
+  const dispatch=useDispatch();
+  const {articles}=useSelector(state=>state.articleSlice);
+  // console.log(articles);
     const [scoreCardTypeActiveness,setScoreCardTypeActiveness]=useState({
         cricket:true,
         football:false
     })
+
+    useEffect(() => {
+      dispatch(getArticles('ipl'));
+    },[]);
   return (
     <>
       <Navbar/>
-      {/* <div className='border-b-[2px] p-2'>
-        <span className={`rounded-xl py-[2px] px-[20px]  font-bold mr-2 border-[#568fe4]  border-[1px] ${scoreCardTypeActiveness.cricket ?  "bg-[#3974ce] text-[#fff]" : "text-[#568fe4] bg-[#fff]"} cursor-pointer`} onClick={() => {setScoreCardTypeActiveness({
-            cricket:true,
-            football:false
-        })}}>Cricket</span>
-        <span className={`rounded-xl py-[2px] px-[20px] text-[#568fe4] font-bold mr-2 border-[#568fe4] bg-[#fff] border-[1px] ${scoreCardTypeActiveness.football ?  "bg-[#3974ce] text-[#fff]" : "text-[#568fe4] bg-[#fff]"} cursor-pointer`} onClick={() => {setScoreCardTypeActiveness({
-            cricket:false,
-            football:true
-        })}}>Football</span>
-      </div> */}
-      <div>
-        Atricles
+      <div className='px-4'>
+        {
+          articles?.map((article,index)=>(
+            <Article key={index} article={article}/>
+          ))
+        }
+        {/* <Article/> */}
       </div>
     </>
   )

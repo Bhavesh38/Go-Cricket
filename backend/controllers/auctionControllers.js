@@ -1,9 +1,10 @@
 import auctionModel from "../models/auctionModel.js";
+import UserModel from "../models/userModel.js";
 
 
 export const createNewAuction = async (req, res) => {
     try {
-        const { auctionName, auctionDescription } = req.body;
+        const { auctionName, auctionDescription,auctionCreator } = req.body;
         const findAuction=await auctionModel.findOne({auctionName});
         if(findAuction) {
             return res.json({
@@ -11,9 +12,12 @@ export const createNewAuction = async (req, res) => {
                 message: "Auction already exists"
             });
         }
-        const newAuction = new auctionModel({ auctionName, auctionDescription, creator: req.userId });
+        const newAuction = new auctionModel({ auctionName, auctionDescription });
         await newAuction.save();
-        res.status(200).json(newAuction);
+
+        const auctionId=newAuction._id;
+        const result=await UserModel.updateOne({email:auctionCreator},{$push:{auctions:auctionId}});
+        res.status(200).json({newAuction:newAuction,result:result});
     } catch (error) {
         res.json({
             stats: 500,
@@ -62,15 +66,15 @@ export const addPlayerInAuction = async (req,res) => {
     try {
         const {id}=req.params;
         const {player}=req.body;
-        const findAuction=await auctionModel.findById({_id:id});
+        const findAuction=await auctionModel.updateOne({_id:id},{$push:{playerList:player}});
         if(!findAuction) {
             return res.json({
                 status: 400,
                 message: "Auction does not exists"
             });
         }
-        findAuction.playerList.push(player);
-        await findAuction.save();
+        // findAuction.playerList.push(player);
+        // await findAuction.save();
         res.status(200).json(findAuction);
     } catch (error) {
         res.json({

@@ -7,7 +7,7 @@ import nodemailer from 'nodemailer';
 
 export const signup = async (req, res) => {
     try{
-        const { userName,email, password } = req.body;
+        const { name,email, password } = req.body;
         const findUser=await UserModel.findOne({email:email});
         if(findUser){
             return res.status(400).json({message:"User already exists"});
@@ -15,7 +15,7 @@ export const signup = async (req, res) => {
         }
         const hashedPassword=await bycrypt.hash(password,10);
 
-        const createdUser = await UserModel.create({email:email,userName:userName,password:hashedPassword});
+        const createdUser = await UserModel.create({email:email,name:name,password:hashedPassword});
         createdUser.save();
 
         const token=jwt.sign({email:createdUser.email,id:createdUser._id},process.env.JWT_SECRET,{expiresIn:"24h"});

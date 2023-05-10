@@ -3,6 +3,7 @@ import authSlice from "./authSlice";
 import matchSlice from "./matchSlice";
 import footballSlice from "./footballSlice";
 import auctionSlice from "./auctionSlice";
+import articleSlice from "./articleSlice";
 
 const store=configureStore({
     reducer:{
@@ -10,7 +11,8 @@ const store=configureStore({
         authSlice:authSlice,
         matchSlice:matchSlice,
         footballSlice:footballSlice,
-        auctionSlice:auctionSlice
+        auctionSlice:auctionSlice,
+        articleSlice:articleSlice,
     }
 })
 

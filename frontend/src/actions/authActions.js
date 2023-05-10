@@ -1,10 +1,12 @@
 import * as api from "../api/authApi";
+import { setUser } from "../redux/authSlice";
 
 export const signIn = (formData) =>async (dispatch) => {
     try {
-        const {data}=await api.signinAPI(formData);
+        const data=await api.signinAPI(formData);
         // dispatch({type:"AUTH",data});
-        console.log(data);
+        dispatch(setUser(data?.data));
+        return data;
     } catch (error) {
         console.log(error);
     }
@@ -13,9 +15,11 @@ export const signIn = (formData) =>async (dispatch) => {
 
 export const signUp = (formData) =>async (dispatch) => {
     try {
-        const {data}=await api.signupAPI(formData);
+        const data =await api.signupAPI(formData);
         // dispatch({type:"AUTH",data});
-        console.log(data);
+        // console.log(data);
+        dispatch(setUser(data?.data));
+        return data;
     } catch (error) {
         console.log(error);
     }

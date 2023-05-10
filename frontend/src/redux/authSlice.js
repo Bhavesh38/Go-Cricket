@@ -3,14 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export const authSlice=createSlice({
     name:"authSlice",
     initialState:{
-        APIKEY:""
+        user:"",
     },
     reducers:{
-        setAPIKEY:(state,action)=>{
-            state.APIKEY=action.payload
+        setUser:(state,action)=>{
+            localStorage.setItem("goSportsProfile", JSON.stringify(action.payload ));
+            state.user=action.payload;
         }
     }
 });
 
-export const {setAPIKEY}=authSlice.actions;
+export const {setUser}=authSlice.actions;
 export default authSlice.reducer;

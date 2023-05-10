@@ -4,6 +4,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ServicesHover from "./services/ServicesHover";
 import MatchesHover from "./matches/MatchesHover";
 import { Link } from "react-router-dom";
+import Profile from "./Profile";
 
 export default function Navbar() {
 
@@ -11,7 +12,11 @@ export default function Navbar() {
         services: false,
         matches: false,
     });
+    const [user, setUser] = useState(JSON.parse(localStorage?.getItem("goSportsProfile")));
+    // const user="";
+    // console.log(user);
 
+    const [showProfile,setShowProfile]=useState(false);
 
     const handleServicesClick = () => {
         setNavbarItemActiveness({
@@ -65,8 +70,15 @@ export default function Navbar() {
                 
                 <span className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">Contact</span>
                 <span className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">About</span>
-                <Link to="/signin" className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">SignUp</Link>
+                {
+                    !user?.token ? <Link to="/signin" className="bg-[#fff] text-[#113D59] font-bold px-2 py-1 cursor-pointer  mr-2 rounded-sm hover:bg-[#a2a2a2]">SignUp</Link> :
+                    <div onClick={() => setShowProfile(!showProfile)} className="relative">
+                        <span className="bg-[#fff] text-[#e73c77] font-bold p-1 cursor-pointer  mr-2 rounded-full hover:bg-[#a2a2a2]">{user?.result?.name?.slice(0,2)?.toUpperCase()}</span>
+                        {showProfile && <Profile/>}
+                    </div>
+                }
 
+                
             </div>
         </div>
     )

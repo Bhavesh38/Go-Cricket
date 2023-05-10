@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import { setMatchId } from '../../redux/matchSlice';
+import { setMatchId, setSeriesId } from '../../redux/matchSlice';
 // e49e70f2-437b-4395-b267-bf81546b740d
 const CricketScoreCard = ({match}) => {
     // console.log(match);
@@ -10,6 +10,7 @@ const CricketScoreCard = ({match}) => {
     const handleClick = () => {
         // () => dispatch(setMatchId(match?.id))
         dispatch(setMatchId(match?.id));
+        dispatch(setSeriesId(match?.series_id));
         navigate(`/cricket/scorecard/${match.id}`);
         
     }

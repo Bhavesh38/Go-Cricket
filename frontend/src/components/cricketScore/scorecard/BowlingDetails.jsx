@@ -2,7 +2,7 @@ import React from 'react'
 
 const BowlingDetails = ({bowling}) => {
   return (
-    <div className='w-full '>
+    <div className='w-full px-4 mb-4'>
       <table className='w-full text-left px-4'>
         <tr className='bg-[#ebeaea] px-4 w-full border-b-[1px]'>
             <th>Bowler</th>

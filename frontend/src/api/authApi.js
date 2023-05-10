@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-import axios from "axios";
 // console.log(token)
 const API = axios.create({
     // https://dont-use-this.meredavai.com
