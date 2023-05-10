@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CreateAuctionPortal from './createAuction/CreateAuctionPortal';
 
 const AuctionTypes = () => {
-  const [createAuctionActive, setCreateAuctionActive] = useState(false);
+  const [createAuctionActive, setCreateAuctionActive] = useState(true);
   const [participateAuctionActive, setParticipateAuctionActive] = useState(false);
   return (
     <div className='flex bg-[#d2e5ed] font-semibold'>

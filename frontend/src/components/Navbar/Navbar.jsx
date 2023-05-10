@@ -26,7 +26,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="flex justify-between bg-[#335A7B] text-[#fff] p-2 items-center">
+        <div className=" w-full flex justify-between bg-[#335A7B] text-[#fff] p-2 items-center">
             <div className="flex">
                 <div>
                     logo

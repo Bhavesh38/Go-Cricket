@@ -8,10 +8,11 @@ export const auctionSlice= createSlice({
         bowlers:[],
         allrounders:[],
         wicketkeepers:[],
+        currentUserAuctions:[],
     },
     reducers: {
         setAuctions: (state, action) => {
-            state.auctions = [...state.auctions,action.payload];
+            state.auctions = (action.payload);
         },
         setBatters: (state, action) => {
             state.batters = [...state.batters,action.payload];
@@ -25,8 +26,11 @@ export const auctionSlice= createSlice({
         setWicketkeepers: (state, action) => {
             state.wicketkeepers = [...state.wicketkeepers,action.payload];
         },
+        setCurrentUserAuctions: (state, action) => {
+            state.currentUserAuctions = action.payload;
+        }
     }
 });
 
-export const { setBatters ,setBowlers,setAllrounders,setWicketkeepers,setAuctions} = auctionSlice.actions;
+export const { setBatters ,setBowlers,setAllrounders,setWicketkeepers,setAuctions,setCurrentUserAuctions} = auctionSlice.actions;
 export default auctionSlice.reducer;

@@ -28,8 +28,18 @@ export const createNewAuction = async (req, res) => {
 
 export const getAllAuction =async (req, res) =>{
     try {
-        const auction = await auctionModel.find();
-        res.status(200).json(auction);
+        const {auctions}=req.body;
+        console.log(auctions);
+        let tempArray=[];
+        auctions?.forEach(async (auction)=>{
+            const foundAuction = await auctionModel.findOne({_id:auction});
+            if(foundAuction){
+                tempArray.push(foundAuction);
+            }
+            // tempArray.push(foundAuction);
+        })
+        
+        res.status(200).json(tempArray);
     } catch (error) {
         res.json({
             stats: 500,
