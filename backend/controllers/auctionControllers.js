@@ -26,27 +26,58 @@ export const createNewAuction = async (req, res) => {
     }
 }
 
-export const getAllAuction =async (req, res) =>{
+export const getAllAuction = async (req, res) => {
     try {
-        const {auctions}=req.body;
-        console.log(auctions);
-        let tempArray=[];
-        auctions?.forEach(async (auction)=>{
-            const foundAuction = await auctionModel.findOne({_id:auction});
-            if(foundAuction){
-                tempArray.push(foundAuction);
-            }
-            // tempArray.push(foundAuction);
-        })
-        
-        res.status(200).json(tempArray);
+        const { auctions } = req.body;
+
+        // Use map to create an array of promises that resolve to foundAuction
+        const promises = auctions?.map(auction => {
+            return auctionModel.findOne({ _id: auction });
+        });
+
+        // Wait for all promises to resolve
+        const results = await Promise.all(promises);
+        console.log(results);
+
+        // Add foundAuction to tempArray if it exists
+        // results.forEach(foundAuction => {
+        //     if (foundAuction) {
+        //         tempArray.push(foundAuction);
+        //     }
+        // });
+
+        res.status(200).json(results);
     } catch (error) {
         res.json({
-            stats: 500,
+            status: 500,
             message: error.message
-        })
+        });
     }
-}
+};
+
+
+// export const getAllAuction =async (req, res) =>{
+//     try {
+       
+//         const {auctions}=req.body;
+        
+//         let tempArray=[];
+//         auctions?.forEach(async (auction)=>{
+//             const foundAuction = await auctionModel.findOne({_id:auction});
+//             if(foundAuction){
+//                 tempArray.push(foundAuction);
+//             }
+           
+//         })
+        
+//         res.status(200).json(tempArray);
+//     } catch (error) {
+//         res.json({
+//             stats: 500,
+//             message: error.message
+//         })
+//     }
+// }
 
 export const deleteAuction=async (req,res) => {
     try {

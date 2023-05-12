@@ -14,8 +14,8 @@ export const createNewAuction = (formData) => async (dispatch) => {
 
 export const getAllAuctions = (formData) => async (dispatch) => {
     try {
-        const { data } = await api.getAllAuctionsAPI(formData);
-        console.log(data);
+        const  {data}  = await api.getAllAuctionsAPI(formData);
+        // console.log(data);
         // dispatch(setAuctions(data));
         dispatch(setCurrentUserAuctions(data));
         // return data;

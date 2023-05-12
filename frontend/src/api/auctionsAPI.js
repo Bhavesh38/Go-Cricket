@@ -10,4 +10,4 @@ const API= axios.create({
 });
 
 export const createNewAuctionAPI = (formData) => API.post("/auction/create-auction", formData);
-export const getAllAuctionsAPI = (formData) => API.get("/auction/allAuctions", formData);
+export const getAllAuctionsAPI = (formData) => API.post("/auction/allAuctions", formData);
